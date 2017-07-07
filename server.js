@@ -4,6 +4,15 @@ var express = require('express')
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
+
+// habilitando cors no servidor local
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+  next();
+});
+
  // usuarios
  let usuarios = [
       {id: 1, nome: 'Carlos Lima'},
@@ -27,8 +36,8 @@ let ID = 10;
        }else{
              let usuario = usuarios.filter((u)=>{
                  return u.id == req.params.id;
-            });
-       res.json(usuario);
+        });
+        res.json(usuario[0]);
        }  
        
    })
@@ -50,9 +59,13 @@ let ID = 10;
    })
    .delete((req, res) =>{
        let index = usuarios.findIndex((u)=>{ return u.id == req.params.id; });
-       delete usuarios[index]; 
+       
+       // delete retirado porque gerava inconsistencia no object
+       //delete usuarios[index]; 
 
+       usuarios.splice(index,1);
        res.json({}).status(204);
+
    });
 
 

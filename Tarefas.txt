@@ -1,0 +1,9 @@
+TAREFAS VUE
+
+- Listagem - OK
+- Excluir - 
+- Editar
+- Rotas
+- Busca
+- Componentes
+- Paginacao

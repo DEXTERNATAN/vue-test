@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h2>{{msg}}</h2>  
+    <header class="header">
+      <HeaderPages></HeaderPages>
+    </header>
+    <router-view></router-view>
+    <footer class="footer">
+      <FooterPages></FooterPages>
+    </footer>
   </div>
 </template>
 
 <script>
+
+import HeaderPages from './components/HeaderPages.vue'
+import FooterPages from './components/FooterPages.vue'
+import Alert from './components/Alert.vue'
+
+
 export default {
+  components: {
+    HeaderPages,
+    FooterPages,
+    Alert
+  },
   name: 'app',
   data () {
     return {
@@ -16,31 +32,6 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+<style lang="scss">
+  @import 'assets/styles/app.scss'
 </style>
