@@ -1,6 +1,7 @@
 <template>
-  <main>
-    <div class="page-header">
+
+<main>
+<div class="page-header">
       <div class="container">
         <h1 class="">Sobre</h1>
       </div>
@@ -11,16 +12,15 @@
         <p>Versão do sistema 1.0</p>
       </div>
     </div>
-  </main>
+</main>
 </template>
-
 <script>
-  export default {
-    name: 'sobre',
-    data: () => ({
-      
-    })
-  }
+export default {
+	name: 'sobre',
+	data: () => ({
+		})
+}
 </script>
 <style scoped>
+
 </style>

@@ -13,7 +13,7 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><router-link to="/sobre">Sobre</router-link></li>
+						<li><router-link to="/Ajuda">Sobre</router-link></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
